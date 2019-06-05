@@ -1,0 +1,11 @@
+.custom-file-label::after{
+    content: "Szukaj" !important;
+    cursor: pointer;
+}
+.min_height{
+    min-height: 40rem;
+}
+.btn-light a{
+    color: #222;
+    display: block;
+}

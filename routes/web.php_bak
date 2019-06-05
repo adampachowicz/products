@@ -1,0 +1,36 @@
+<?php
+
+use App\Http\Controllers\PagesController;
+
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider within a group which
+| contains the "web" middleware group. Now create something great!
+|
+*/
+// this page display all product in columns and it's main page off aplication
+Route::get('/', function () {
+    return view('home');
+});
+
+//this page display product with image, title, desripiton and comments
+Route::get('/product', 'ProductController@index');
+Route::post('/product', 'ProductController@store');
+
+//this page display if we wolud like to add product
+Route::get('/product/add', 'ProductController@create');
+
+
+//this page display if we wolud like to update product
+Route::get('product/edit', 'ProductController@editproduct');
+
+//this page display if we wolud like to comment product
+Route::get('product/comment', 'ProductController@commentproduct');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
